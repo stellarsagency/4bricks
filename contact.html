@@ -56,6 +56,13 @@
     .mobile-menu.open { right: 0; }
     .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; visibility: hidden; transition: all .3s; }
     .mobile-overlay.open { opacity: 1; visibility: visible; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 120px 0 60px; }
+      .btn-gold, .btn-outline { padding: 14px 24px; font-size: 14px; }
+      .wa-float { width: 54px; height: 54px; font-size: 26px; bottom: 20px; right: 20px; }
+      .top-btn { width: 40px; height: 40px; bottom: 84px; right: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -145,7 +152,7 @@
 
 <footer class="bg-dark pt-20 pb-8">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
       <div><a href="index.html" class="flex items-center gap-3 mb-6"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a><p class="text-white/50 text-sm leading-relaxed">Pakistan's trusted real estate partner.</p></div>
       <div><h4 class="text-white font-bold text-base mb-6">Quick Links</h4><ul class="space-y-3"><li><a href="index.html" class="footer-link text-sm">Home</a></li><li><a href="about.html" class="footer-link text-sm">About Us</a></li><li><a href="services.html" class="footer-link text-sm">Services</a></li><li><a href="properties.html" class="footer-link text-sm">Properties</a></li><li><a href="agents.html" class="footer-link text-sm">Our Team</a></li><li><a href="contact.html" class="footer-link text-sm">Contact</a></li></ul></div>
       <div><h4 class="text-white font-bold text-base mb-6">Services</h4><ul class="space-y-3"><li><a href="properties.html" class="footer-link text-sm">Buy Property</a></li><li><a href="properties.html" class="footer-link text-sm">Rent Property</a></li><li><a href="properties.html" class="footer-link text-sm">Residential</a></li><li><a href="properties.html" class="footer-link text-sm">Commercial</a></li></ul></div>

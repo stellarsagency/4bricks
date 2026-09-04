@@ -126,6 +126,19 @@
     .mobile-menu.open { right: 0; }
     .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; visibility: hidden; transition: all .3s; }
     .mobile-overlay.open { opacity: 1; visibility: visible; }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 680px; }
+      .hero .hero-search > .flex { flex-direction: column; gap: 8px; }
+      .hero .hero-search input { text-align: center; padding: 14px 16px; }
+      .hero .hero-search a { width: 100%; display: flex; justify-content: center; padding: 14px 20px; }
+      .hero .btn-gold, .hero .btn-outline { width: 100%; justify-content: center; }
+      .page-hero { padding: 120px 0 60px; }
+      .btn-gold, .btn-outline { padding: 14px 24px; font-size: 14px; }
+      .stat-num { font-size: 32px !important; }
+      .wa-float { width: 54px; height: 54px; font-size: 26px; bottom: 20px; right: 20px; }
+      .top-btn { width: 40px; height: 40px; bottom: 84px; right: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -222,9 +235,9 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-4 reveal">
-        <a href="properties.html" class="btn-gold"><i class="fas fa-compass"></i><span>Explore Properties</span></a>
-        <a href="https://wa.me/923441334472" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span></a>
+      <div class="flex flex-col sm:flex-row gap-4 reveal">
+        <a href="properties.html" class="btn-gold w-full sm:w-auto justify-center"><i class="fas fa-compass"></i><span>Explore Properties</span></a>
+        <a href="https://wa.me/923441334472" target="_blank" class="btn-outline w-full sm:w-auto justify-center"><i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span></a>
       </div>
     </div>
   </div>
@@ -549,7 +562,7 @@
 <!-- ===== CTA ===== -->
 <section class="py-16 bg-white">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
-    <div class="bg-dark rounded-[32px] p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden reveal">
+    <div class="bg-dark rounded-[32px] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden reveal">
       <div class="absolute -top-32 -right-32 w-[400px] h-[400px] bg-gold/[.06] rounded-full"></div>
       <div class="relative z-10 flex-1">
         <h2 class="font-display text-[clamp(28px,3.5vw,40px)] font-bold text-white leading-tight mb-4">Ready to Find Your <span class="gold-text">Dream Home?</span></h2>
@@ -569,7 +582,7 @@
 <!-- ===== FOOTER ===== -->
 <footer class="bg-dark pt-20 pb-8">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
       <div>
         <a href="index.html" class="flex items-center gap-3 mb-6">
           <div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div>
