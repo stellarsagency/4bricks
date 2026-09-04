@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Bricks Marketing – Pakistan's Trusted Real Estate Partner</title>
+  <meta name="description" content="4 Bricks Marketing – Pakistan's trusted real estate partner. Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta name="keywords" content="real estate Pakistan, property for sale, property for rent, Karachi real estate, Lahore real estate, 4 Bricks Marketing">
+  <meta name="author" content="4 Bricks Marketing">
+  <meta property="og:title" content="4 Bricks Marketing – Pakistan's Trusted Real Estate Partner">
+  <meta property="og:description" content="Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4bricksmarketing.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c9a227'/><text y='.9em' x='50' font-size='70' font-weight='bold' text-anchor='middle' fill='%230a0a0f' font-family='serif'>4</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#c9a227', light: '#f0dfa0', dark: '#a17e1a', 50: '#fdf9ed' },
+            dark: { DEFAULT: '#0a0a0f', 2: '#111118', 3: '#18181f', 4: '#1f1f2a' }
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            display: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #fafafa; }
+
+    /* Preloader */
+    #preloader { position: fixed; inset: 0; z-index: 99999; background: #0a0a0f; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .6s, visibility .6s; }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    #preloader .logo { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 800; color: #c9a227; }
+    #preloader .bar { width: 200px; height: 2px; background: #1f1f2a; border-radius: 2px; overflow: hidden; }
+    #preloader .bar span { display: block; width: 0; height: 100%; background: #c9a227; animation: load 1.5s ease forwards; }
+    @keyframes load { to { width: 100%; } }
+
+    /* Nav */
+    .nav-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: all .4s; }
+    .nav-fixed.scrolled { background: rgba(10,10,15,.92); backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,.2); }
+
+    /* Hero */
+    .hero { position: relative; height: 100vh; min-height: 800px; display: flex; align-items: center; overflow: hidden; background: #0a0a0f; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45; transform: scale(1.05); animation: heroZoom 20s ease-in-out infinite alternate; }
+    @keyframes heroZoom { 0% { transform: scale(1.05); } 100% { transform: scale(1.15); } }
+    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,15,.92) 0%, rgba(10,10,15,.7) 50%, rgba(10,10,15,.5) 100%); }
+    .hero-gradient::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, #0a0a0f, transparent); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,162,39,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: orbFloat 8s ease-in-out infinite; }
+    .hero-orb-1 { width: 500px; height: 500px; background: rgba(201,162,39,.12); top: -10%; right: -5%; animation-delay: 0s; }
+    .hero-orb-2 { width: 350px; height: 350px; background: rgba(201,162,39,.08); bottom: 10%; left: -5%; animation-delay: -4s; }
+    .hero-orb-3 { width: 200px; height: 200px; background: rgba(201,162,39,.06); top: 30%; right: 30%; animation-delay: -2s; }
+    @keyframes orbFloat { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.1); } }
+    .hero-line { position: absolute; width: 1px; background: linear-gradient(to bottom, transparent, rgba(201,162,39,.2), transparent); height: 120px; animation: lineMove 4s ease-in-out infinite; }
+    @keyframes lineMove { 0%,100% { opacity: .3; } 50% { opacity: .8; } }
+    .hero-float { position: absolute; background: rgba(255,255,255,.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 16px 20px; animation: floatCard 6s ease-in-out infinite; }
+    @keyframes floatCard { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .hero-float-1 { bottom: 18%; right: 8%; animation-delay: 0s; }
+    .hero-float-2 { top: 25%; right: 15%; animation-delay: -2s; }
+    .hero-float-3 { bottom: 30%; right: 25%; animation-delay: -4s; }
+    .hero-search { background: rgba(255,255,255,.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 8px; }
+    .hero-search input { background: transparent; border: none; outline: none; color: #fff; font-size: 15px; padding: 14px 20px; width: 100%; }
+    .hero-search input::placeholder { color: rgba(255,255,255,.35); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,162,39,.08); border: 1px solid rgba(201,162,39,.2); padding: 8px 18px; border-radius: 60px; }
+    .hero-badge-dot { width: 6px; height: 6px; background: #c9a227; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+    .hero-stat { text-align: center; padding: 20px 24px; background: rgba(255,255,255,.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.05); border-radius: 16px; min-width: 130px; }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10; }
+    .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(201,162,39,.5), transparent); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+    /* Text gradient */
+    .gold-text { background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Property card */
+    .prop-card { transition: all .5s cubic-bezier(.16,1,.3,1); }
+    .prop-card:hover { transform: translateY(-12px); }
+    .prop-card:hover .prop-img img { transform: scale(1.08); }
+    .prop-img { overflow: hidden; }
+    .prop-img img { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+
+    /* Smooth buttons */
+    .btn-gold { background: #c9a227; color: #0a0a0f; padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; border: none; cursor: pointer; }
+    .btn-gold:hover { background: #f0dfa0; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,162,39,.3); }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.25); padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; cursor: pointer; backdrop-filter: blur(10px); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); transform: translateY(-3px); }
+
+    /* WhatsApp */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 62px; height: 62px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 999; box-shadow: 0 6px 30px rgba(37,211,102,.35); transition: all .3s; text-decoration: none; }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: #25D366; opacity: .3; animation: ring 2s infinite; }
+    @keyframes ring { 0% { transform: scale(1); opacity: .3; } 100% { transform: scale(1.4); opacity: 0; } }
+
+    /* Top */
+    .top-btn { position: fixed; bottom: 102px; right: 28px; width: 46px; height: 46px; background: #c9a227; color: #0a0a0f; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; opacity: 0; transform: translateY(10px); transition: all .3s; border: none; cursor: pointer; }
+    .top-btn.show { opacity: 1; transform: none; }
+    .top-btn:hover { transform: translateY(-3px); }
+
+    /* Footer */
+    .footer-link { color: rgba(255,255,255,.55); transition: all .3s; }
+    .footer-link:hover { color: #c9a227; }
+
+    /* Page header */
+    .page-hero { position: relative; padding: 160px 0 80px; background: #0a0a0f; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,162,39,.08), transparent 70%); }
+
+    /* Form */
+    .form-input { width: 100%; padding: 16px 20px; background: #f5f5f5; border: 2px solid transparent; border-radius: 12px; font-size: 15px; font-family: 'DM Sans', sans-serif; transition: all .3s; }
+    .form-input:focus { outline: none; border-color: #c9a227; background: #fff; box-shadow: 0 0 0 4px rgba(201,162,39,.08); }
+
+    /* Toast */
+    .toast { position: fixed; top: 100px; right: 28px; background: #c9a227; color: #0a0a0f; padding: 18px 28px; border-radius: 14px; font-weight: 600; display: flex; align-items: center; gap: 10px; z-index: 10000; box-shadow: 0 10px 40px rgba(0,0,0,.15); transform: translateX(120%); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+    .toast.show { transform: none; }
+
+    /* City card */
+    .city-card { position: relative; border-radius: 16px; overflow: hidden; height: 176px; cursor: pointer; }
+    .city-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .city-card:hover img { transform: scale(1.1); }
+
+    /* Counter */
+    .stat-num { font-variant-numeric: tabular-nums; }
+
+    /* Mobile menu */
+    .mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 380px; height: 100vh; background: #111118; z-index: 9999; transition: right .4s cubic-bezier(.16,1,.3,1); padding: 100px 40px 40px; }
+    .mobile-menu.open { right: 0; }
+    .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; visibility: hidden; transition: all .3s; }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+  </style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="logo">4</div>
+  <div class="bar"><span></span></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav-fixed" id="nav">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div>
+      <div class="leading-none">
+        <div class="font-display text-lg font-bold text-white">Bricks</div>
+        <div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div>
+      </div>
+    </a>
+    <ul class="hidden lg:flex items-center gap-10" id="desktopNav">
+      <li><a href="index.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">About</a></li>
+      <li><a href="services.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Services</a></li>
+      <li><a href="properties.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Properties</a></li>
+      <li><a href="agents.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Agents</a></li>
+      <li><a href="contact.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="tel:+923441334472" class="hidden sm:flex items-center gap-2 bg-gold text-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gold-light transition">
+        <i class="fas fa-phone text-xs"></i> Call Now
+      </a>
+      <a href="https://wa.me/923441334472" target="_blank" class="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center text-lg hover:scale-110 transition">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <button class="lg:hidden flex flex-col gap-[5px] p-2" onclick="toggleMenu()">
+        <span class="w-6 h-[2px] bg-white rounded transition-all" id="bar1"></span>
+        <span class="w-6 h-[2px] bg-white rounded transition-all" id="bar2"></span>
+        <span class="w-6 h-[2px] bg-white rounded transition-all" id="bar3"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="block text-white text-2xl font-display font-bold mb-6">Home</a>
+  <a href="about.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">About</a>
+  <a href="services.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Services</a>
+  <a href="properties.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Properties</a>
+  <a href="agents.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Agents</a>
+  <a href="contact.html" class="block text-white/60 text-lg mb-8 hover:text-gold transition">Contact</a>
+  <a href="tel:+923441334472" class="btn-gold w-full justify-center mb-3"><i class="fas fa-phone"></i> Call +92 344 133 4472</a>
+  <a href="https://wa.me/923441334472" target="_blank" class="btn-outline w-full justify-center"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <!-- Background -->
+  <div class="hero-bg">
+    <img loading="lazy" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Luxury real estate">
+  </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+
+  <!-- Floating orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- Decorative lines -->
+  <div class="hero-line" style="left:10%; top:20%;"></div>
+  <div class="hero-line" style="left:25%; top:40%; animation-delay:-1s;"></div>
+  <div class="hero-line" style="right:20%; top:15%; animation-delay:-2s;"></div>
+  <div class="hero-line" style="right:35%; bottom:25%; animation-delay:-3s;"></div>
+
+  <!-- Floating cards -->
+  <div class="hero-float hero-float-1 hidden lg:flex items-center gap-3">
+    <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center"><i class="fas fa-shield-alt text-gold text-sm"></i></div>
+    <div><div class="text-white text-sm font-semibold">Verified</div><div class="text-white/40 text-xs">Properties</div></div>
+  </div>
+  <div class="hero-float hero-float-2 hidden lg:flex items-center gap-3">
+    <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center"><i class="fas fa-star text-gold text-sm"></i></div>
+    <div><div class="text-white text-sm font-semibold">4.9 Rating</div><div class="text-white/40 text-xs">Client Reviews</div></div>
+  </div>
+  <div class="hero-float hero-float-3 hidden lg:flex items-center gap-3">
+    <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center"><i class="fas fa-map-marker-alt text-gold text-sm"></i></div>
+    <div><div class="text-white text-sm font-semibold">8+ Cities</div><div class="text-white/40 text-xs">Across Pakistan</div></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 pt-32">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div class="hero-badge mb-8 reveal">
+        <span class="hero-badge-dot"></span>
+        <span class="text-gold text-sm font-medium">#1 Real Estate Platform in Pakistan</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="font-display font-extrabold leading-[1.02] mb-8 reveal">
+        <span class="block text-white text-[clamp(48px,8vw,92px)] tracking-tight">Find Your</span>
+        <span class="block text-[clamp(48px,8vw,92px)] tracking-tight"><span class="gold-text">Dream</span> Property</span>
+        <span class="block text-white/60 text-[clamp(20px,3vw,32px)] font-sans font-medium tracking-normal mt-4">in Pakistan's Most Trusted Real Estate Market</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-white/45 text-[clamp(15px,1.8vw,18px)] max-w-xl leading-relaxed mb-10 reveal">
+        Discover verified residential, commercial and plot listings across Pakistan. Buy, sell or rent with confidence.
+      </p>
+
+      <!-- Search bar -->
+      <div class="hero-search max-w-2xl mb-12 reveal">
+        <div class="flex items-center">
+          <i class="fas fa-search text-white/30 ml-5 text-lg"></i>
+          <input type="text" placeholder="Search by city, area, or property name..." class="flex-1">
+          <a href="properties.html" class="bg-gold text-dark px-8 py-4 rounded-2xl font-semibold text-sm hover:bg-gold-light transition whitespace-nowrap">Search</a>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mb-14 reveal">
+        <a href="properties.html" class="btn-gold"><i class="fas fa-compass"></i><span>Explore Properties</span></a>
+        <a href="https://wa.me/923441334472" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="text-white/30 text-[10px] uppercase tracking-[3px] mb-2">Scroll</div>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="relative z-10 -mt-10 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <a href="properties.html" class="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.12)] transition-all duration-500 hover:-translate-y-2 group reveal">
+      <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-xl mx-auto mb-4 group-hover:bg-gold group-hover:text-dark transition-all duration-300"><i class="fas fa-home"></i></div>
+      <h3 class="font-semibold text-dark text-[15px] mb-1">Buy Property</h3>
+      <p class="text-gray-400 text-xs">Houses, apartments, villas</p>
+    </a>
+    <a href="properties.html" class="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.12)] transition-all duration-500 hover:-translate-y-2 group reveal">
+      <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-xl mx-auto mb-4 group-hover:bg-gold group-hover:text-dark transition-all duration-300"><i class="fas fa-key"></i></div>
+      <h3 class="font-semibold text-dark text-[15px] mb-1">Rent Property</h3>
+      <p class="text-gray-400 text-xs">Shops, offices, warehouses</p>
+    </a>
+    <a href="properties.html" class="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.12)] transition-all duration-500 hover:-translate-y-2 group reveal">
+      <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-xl mx-auto mb-4 group-hover:bg-gold group-hover:text-dark transition-all duration-300"><i class="fas fa-city"></i></div>
+      <h3 class="font-semibold text-dark text-[15px] mb-1">Residential</h3>
+      <p class="text-gray-400 text-xs">Premium & high-end</p>
+    </a>
+    <a href="properties.html" class="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.12)] transition-all duration-500 hover:-translate-y-2 group reveal">
+      <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-xl mx-auto mb-4 group-hover:bg-gold group-hover:text-dark transition-all duration-300"><i class="fas fa-store"></i></div>
+      <h3 class="font-semibold text-dark text-[15px] mb-1">Commercial</h3>
+      <p class="text-gray-400 text-xs">Offices, shops, plazas</p>
+    </a>
+    <a href="properties.html" class="bg-white rounded-2xl p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.12)] transition-all duration-500 hover:-translate-y-2 group reveal col-span-2 md:col-span-1">
+      <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-xl mx-auto mb-4 group-hover:bg-gold group-hover:text-dark transition-all duration-300"><i class="fas fa-map"></i></div>
+      <h3 class="font-semibold text-dark text-[15px] mb-1">Plots & Land</h3>
+      <p class="text-gray-400 text-xs">Investment plots</p>
+    </a>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="py-28 lg:py-36" id="about">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div class="relative reveal">
+        <div class="rounded-3xl overflow-hidden shadow-2xl">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="4 Bricks" class="w-full h-[520px] object-cover">
+        </div>
+        <div class="absolute -bottom-8 -right-8 w-52 h-52 rounded-2xl overflow-hidden border-[6px] border-white shadow-2xl hidden md:block">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -top-6 -left-6 bg-gold text-dark px-7 py-5 rounded-2xl shadow-xl hidden md:block">
+          <div class="text-[42px] font-display font-bold leading-none">10+</div>
+          <div class="text-xs font-semibold mt-1">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 text-gold text-sm font-semibold uppercase tracking-widest mb-4"><i class="fas fa-circle text-[6px]"></i> About Us</span>
+        <h2 class="font-display text-[clamp(32px,4vw,46px)] font-bold text-dark leading-[1.15] mb-6">Experienced Real Estate <span class="gold-text">Professionals</span></h2>
+        <p class="text-gray-500 leading-[1.85] mb-5">4 Bricks Marketing is Pakistan's trusted real estate partner. We help you find, buy, sell and rent properties with ease and confidence. A visionary real estate leader with over 10 years of experience in Karachi's property market.</p>
+        <p class="text-gray-500 leading-[1.85] mb-8">Dedicated to making property buying, selling, and renting simple, transparent, and rewarding. His deep market knowledge and client-first approach have made him one of Karachi's most trusted real estate professionals.</p>
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="flex items-center gap-2.5 text-sm text-gray-600"><i class="fas fa-check-circle text-gold"></i> Verified Properties</div>
+          <div class="flex items-center gap-2.5 text-sm text-gray-600"><i class="fas fa-check-circle text-gold"></i> Transparent Dealings</div>
+          <div class="flex items-center gap-2.5 text-sm text-gray-600"><i class="fas fa-check-circle text-gold"></i> Expert Guidance</div>
+          <div class="flex items-center gap-2.5 text-sm text-gray-600"><i class="fas fa-check-circle text-gold"></i> End-to-End Support</div>
+        </div>
+        <a href="about.html" class="btn-gold">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="py-28 bg-white" id="why">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="text-center mb-16 reveal">
+      <span class="inline-flex items-center gap-2 text-gold text-sm font-semibold uppercase tracking-widest mb-4"><i class="fas fa-circle text-[6px]"></i> Why Choose Us</span>
+      <h2 class="font-display text-[clamp(32px,4vw,46px)] font-bold text-dark leading-[1.15]">Why Choose <span class="gold-text">4 Bricks?</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-gray-50 rounded-3xl p-9 text-center hover:bg-white hover:shadow-[0_16px_60px_rgba(0,0,0,.08)] transition-all duration-500 group reveal">
+        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-2xl mx-auto mb-5 group-hover:bg-gold group-hover:text-dark group-hover:scale-110 transition-all duration-300"><i class="fas fa-check-double"></i></div>
+        <h3 class="font-bold text-dark text-lg mb-2">Verified Properties</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Every property is verified by our expert team before listing.</p>
+      </div>
+      <div class="bg-gray-50 rounded-3xl p-9 text-center hover:bg-white hover:shadow-[0_16px_60px_rgba(0,0,0,.08)] transition-all duration-500 group reveal">
+        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-2xl mx-auto mb-5 group-hover:bg-gold group-hover:text-dark group-hover:scale-110 transition-all duration-300"><i class="fas fa-chart-line"></i></div>
+        <h3 class="font-bold text-dark text-lg mb-2">Accurate Valuations</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Accurate market valuations to help you get the best deal.</p>
+      </div>
+      <div class="bg-gray-50 rounded-3xl p-9 text-center hover:bg-white hover:shadow-[0_16px_60px_rgba(0,0,0,.08)] transition-all duration-500 group reveal">
+        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-2xl mx-auto mb-5 group-hover:bg-gold group-hover:text-dark group-hover:scale-110 transition-all duration-300"><i class="fas fa-user-tie"></i></div>
+        <h3 class="font-bold text-dark text-lg mb-2">Expert Agents</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Experienced agents guide you through every step.</p>
+      </div>
+      <div class="bg-gray-50 rounded-3xl p-9 text-center hover:bg-white hover:shadow-[0_16px_60px_rgba(0,0,0,.08)] transition-all duration-500 group reveal">
+        <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center text-gold text-2xl mx-auto mb-5 group-hover:bg-gold group-hover:text-dark group-hover:scale-110 transition-all duration-300"><i class="fas fa-handshake"></i></div>
+        <h3 class="font-bold text-dark text-lg mb-2">Full Transparency</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">End-to-end service with complete transparency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPLORE BY CITY ===== -->
+<section class="py-28 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="text-center mb-12 reveal">
+      <span class="inline-flex items-center gap-2 text-gold text-sm font-semibold uppercase tracking-widest mb-4"><i class="fas fa-circle text-[6px]"></i> Explore by City</span>
+      <h2 class="font-display text-[clamp(32px,4vw,46px)] font-bold text-dark leading-[1.15]">Properties Across <span class="gold-text">Pakistan</span></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Karachi">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Karachi</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lahore">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Lahore</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Islamabad">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Islamabad</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rawalpindi">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Rawalpindi</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Peshawar">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Peshawar</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Quetta">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Quetta</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Multan">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Multan</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+      <a href="properties.html" class="city-card group reveal">
+        <img loading="lazy" src="https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Faisalabad">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0 p-4 text-center">
+          <div class="text-white font-bold text-xl font-display">Faisalabad</div>
+          <div class="text-white/70 text-xs flex items-center justify-center gap-1 mt-0.5"><i class="fas fa-map-marker-alt"></i> Pakistan</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED PROPERTIES ===== -->
+<section class="py-28 lg:py-36" id="properties">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="text-center mb-16 reveal">
+      <span class="inline-flex items-center gap-2 text-gold text-sm font-semibold uppercase tracking-widest mb-4"><i class="fas fa-circle text-[6px]"></i> Featured</span>
+      <h2 class="font-display text-[clamp(32px,4vw,46px)] font-bold text-dark leading-[1.15] mb-4">Featured <span class="gold-text">Properties</span></h2>
+      <p class="text-gray-500 text-lg">Explore our premium property listings</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="prop-card bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.06)] reveal">
+        <div class="prop-img relative h-72">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="" class="w-full h-full object-cover">
+          <div class="absolute top-4 left-4 bg-gold text-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Residential</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-bold text-dark text-lg mb-1">Luxury Villa Collection</h3>
+          <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> North Nazimabad, Karachi</p>
+          <div class="flex gap-4 text-xs text-gray-400 border-t border-gray-100 py-4 mb-5">
+            <span><i class="fas fa-bed text-gold mr-1"></i> 5 Beds</span>
+            <span><i class="fas fa-bath text-gold mr-1"></i> 4 Baths</span>
+            <span><i class="fas fa-vector-square text-gold mr-1"></i> 4,500 sqft</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-xl font-bold gold-text font-display">PKR 4.5 Cr</span>
+            <a href="contact.html" class="text-sm font-semibold text-dark hover:text-gold transition">Inquire <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="prop-card bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.06)] reveal">
+        <div class="prop-img relative h-72">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="" class="w-full h-full object-cover">
+          <div class="absolute top-4 left-4 bg-gold text-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Commercial</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-bold text-dark text-lg mb-1">Business Hub Plaza</h3>
+          <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> Saddar, Karachi</p>
+          <div class="flex gap-4 text-xs text-gray-400 border-t border-gray-100 py-4 mb-5">
+            <span><i class="fas fa-door-open text-gold mr-1"></i> 20 Units</span>
+            <span><i class="fas fa-layer-group text-gold mr-1"></i> 8 Floors</span>
+            <span><i class="fas fa-vector-square text-gold mr-1"></i> 25,000 sqft</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-xl font-bold gold-text font-display">PKR 12 Cr</span>
+            <a href="contact.html" class="text-sm font-semibold text-dark hover:text-gold transition">Inquire <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="prop-card bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.06)] reveal">
+        <div class="prop-img relative h-72">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80" alt="" class="w-full h-full object-cover">
+          <div class="absolute top-4 left-4 bg-gold text-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">Plots</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-bold text-dark text-lg mb-1">Green Valley Farms</h3>
+          <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> Gulshan-e-Iqbal, Karachi</p>
+          <div class="flex gap-4 text-xs text-gray-400 border-t border-gray-100 py-4 mb-5">
+            <span><i class="fas fa-vector-square text-gold mr-1"></i> 10 Marla</span>
+            <span><i class="fas fa-road text-gold mr-1"></i> Corner Plot</span>
+            <span><i class="fas fa-map text-gold mr-1"></i> Open Area</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-xl font-bold gold-text font-display">PKR 85 Lac</span>
+            <a href="contact.html" class="text-sm font-semibold text-dark hover:text-gold transition">Inquire <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-14 reveal">
+      <a href="properties.html" class="btn-gold">View All Properties <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="relative py-28 overflow-hidden">
+  <div class="absolute inset-0">        <img loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="" class="w-full h-full object-cover"></div>
+  <div class="absolute inset-0 bg-dark/90"></div>
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10" data-counters>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="text-center p-8 lg:p-10 bg-white/[.03] border border-white/[.06] rounded-3xl hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 reveal">
+        <i class="fas fa-award text-gold text-3xl mb-4"></i>
+        <div class="text-[44px] font-bold text-white font-display stat-num" data-target="10">0</div>
+        <div class="text-sm text-white/50 mt-1">Years of Trust</div>
+      </div>
+      <div class="text-center p-8 lg:p-10 bg-white/[.03] border border-white/[.06] rounded-3xl hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 reveal">
+        <i class="fas fa-building text-gold text-3xl mb-4"></i>
+        <div class="text-[44px] font-bold text-white font-display stat-num" data-target="5000">0</div>
+        <div class="text-sm text-white/50 mt-1">Properties Listed</div>
+      </div>
+      <div class="text-center p-8 lg:p-10 bg-white/[.03] border border-white/[.06] rounded-3xl hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 reveal">
+        <i class="fas fa-users text-gold text-3xl mb-4"></i>
+        <div class="text-[44px] font-bold text-white font-display stat-num" data-target="15">0</div>
+        <div class="text-sm text-white/50 mt-1">Team Members</div>
+      </div>
+      <div class="text-center p-8 lg:p-10 bg-white/[.03] border border-white/[.06] rounded-3xl hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 reveal">
+        <i class="fas fa-smile text-gold text-3xl mb-4"></i>
+        <div class="text-[44px] font-bold text-white font-display stat-num" data-target="2500">0</div>
+        <div class="text-sm text-white/50 mt-1">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="py-28 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="text-center mb-16 reveal">
+      <span class="inline-flex items-center gap-2 text-gold text-sm font-semibold uppercase tracking-widest mb-4"><i class="fas fa-circle text-[6px]"></i> Testimonials</span>
+      <h2 class="font-display text-[clamp(32px,4vw,46px)] font-bold text-dark leading-[1.15]">What Our <span class="gold-text">Clients Say</span></h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 reveal">
+        <div class="flex gap-1 mb-5"><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i></div>
+        <p class="text-gray-600 leading-[1.85] mb-6 italic">"4 Bricks Marketing made our dream home a reality. Their professional team guided us through every step. Highly recommended for anyone looking for premium properties."</p>
+        <div class="flex items-center gap-4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+          <div><div class="font-bold text-dark text-sm">Ahmed Khan</div><div class="text-xs text-gray-400">Businessman, Karachi</div></div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 reveal">
+        <div class="flex gap-1 mb-5"><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i></div>
+        <p class="text-gray-600 leading-[1.85] mb-6 italic">"As an overseas Pakistani, I was worried about investing back home. 4 Bricks provided transparent dealings and excellent returns. Their team is truly professional."</p>
+        <div class="flex items-center gap-4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+          <div><div class="font-bold text-dark text-sm">Omar Farooq</div><div class="text-xs text-gray-400">NRI Investor, Dubai</div></div>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-500 reveal">
+        <div class="flex gap-1 mb-5"><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i><i class="fas fa-star text-gold text-sm"></i></div>
+        <p class="text-gray-600 leading-[1.85] mb-6 italic">"Excellent service! Found the perfect commercial space for my business through 4 Bricks. Their market knowledge and negotiation skills are outstanding."</p>
+        <div class="flex items-center gap-4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+          <div><div class="font-bold text-dark text-sm">Saqib Rahman</div><div class="text-xs text-gray-400">Entrepreneur, Lahore</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-16 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="bg-dark rounded-[32px] p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden reveal">
+      <div class="absolute -top-32 -right-32 w-[400px] h-[400px] bg-gold/[.06] rounded-full"></div>
+      <div class="relative z-10 flex-1">
+        <h2 class="font-display text-[clamp(28px,3.5vw,40px)] font-bold text-white leading-tight mb-4">Ready to Find Your <span class="gold-text">Dream Home?</span></h2>
+        <p class="text-white/60 text-lg mb-8 leading-relaxed">Contact our expert agents today for a free consultation.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:+923441334472" class="btn-gold"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="https://wa.me/923441334472" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="relative z-10 hidden lg:block">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80" alt="" class="w-72 h-72 rounded-3xl object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-dark pt-20 pb-8">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-6">
+          <div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div>
+          <div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div>
+        </a>
+        <p class="text-white/50 text-sm leading-relaxed mb-6">Pakistan's trusted real estate partner. We help you find, buy, sell and rent properties with ease and confidence.</p>
+        <div class="flex gap-2.5">
+          <a href="#" class="w-10 h-10 bg-white/[.06] rounded-xl flex items-center justify-center text-white/50 text-sm hover:bg-gold hover:text-dark transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 bg-white/[.06] rounded-xl flex items-center justify-center text-white/50 text-sm hover:bg-gold hover:text-dark transition-all"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 bg-white/[.06] rounded-xl flex items-center justify-center text-white/50 text-sm hover:bg-gold hover:text-dark transition-all"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 bg-white/[.06] rounded-xl flex items-center justify-center text-white/50 text-sm hover:bg-gold hover:text-dark transition-all"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/923441334472" target="_blank" class="w-10 h-10 bg-white/[.06] rounded-xl flex items-center justify-center text-white/50 text-sm hover:bg-gold hover:text-dark transition-all"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-base mb-6">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="footer-link text-sm">Home</a></li>
+          <li><a href="about.html" class="footer-link text-sm">About Us</a></li>
+          <li><a href="services.html" class="footer-link text-sm">Services</a></li>
+          <li><a href="properties.html" class="footer-link text-sm">Properties</a></li>
+          <li><a href="agents.html" class="footer-link text-sm">Our Team</a></li>
+          <li><a href="contact.html" class="footer-link text-sm">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-base mb-6">Services</h4>
+        <ul class="space-y-3">
+          <li><a href="properties.html" class="footer-link text-sm">Buy Property</a></li>
+          <li><a href="properties.html" class="footer-link text-sm">Rent Property</a></li>
+          <li><a href="properties.html" class="footer-link text-sm">Residential</a></li>
+          <li><a href="properties.html" class="footer-link text-sm">Commercial</a></li>
+          <li><a href="properties.html" class="footer-link text-sm">Plots & Land</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-base mb-6">Contact Info</h4>
+        <div class="flex gap-3 mb-4"><i class="fas fa-map-marker-alt text-gold mt-1 text-sm"></i><span class="text-white/50 text-sm leading-relaxed">Bhayani Shopping Center, Block M, North Nazimabad, Karachi, Pakistan</span></div>
+        <div class="flex gap-3 mb-4"><i class="fas fa-phone-alt text-gold mt-1 text-sm"></i><a href="tel:+923441334472" class="footer-link text-sm">+92 344 133 4472</a></div>
+        <div class="flex gap-3"><i class="fas fa-envelope text-gold mt-1 text-sm"></i><a href="mailto:info@4bricksmarketing.com" class="footer-link text-sm">info@4bricksmarketing.com</a></div>
+      </div>
+    </div>
+    <div class="border-t border-white/[.06] pt-8 text-center">
+      <p class="text-white/30 text-xs">&copy; 2024 4 Bricks Marketing. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating -->
+<a href="https://wa.me/923441334472" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
+
+<script>
+// Preloader
+window.onload = () => setTimeout(() => document.getElementById('preloader').classList.add('done'), 1500);
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('topBtn').classList.toggle('show', window.scrollY > 500);
+});
+
+// Reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Counter
+const cobs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stat-num').forEach(el => {
+        const t = +el.dataset.target, d = 2000, s = performance.now();
+        (function u(n) { const p = Math.min((n-s)/d,1); el.textContent = Math.floor(t*(1-Math.pow(1-p,3))).toLocaleString(); if(p<1) requestAnimationFrame(u); else el.textContent = t.toLocaleString(); })(s);
+      });
+      cobs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-counters]').forEach(el => cobs.observe(el));
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastText').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+</script>
+
+</body>
+</html>

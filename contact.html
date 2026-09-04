@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – 4 Bricks Marketing</title>
+  <meta name="description" content="4 Bricks Marketing – Pakistan's trusted real estate partner. Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta name="keywords" content="real estate Pakistan, property for sale, property for rent, Karachi real estate, Lahore real estate, 4 Bricks Marketing">
+  <meta name="author" content="4 Bricks Marketing">
+  <meta property="og:title" content="4 Bricks Marketing – Pakistan's Trusted Real Estate Partner">
+  <meta property="og:description" content="Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4bricksmarketing.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c9a227'/><text y='.9em' x='50' font-size='70' font-weight='bold' text-anchor='middle' fill='%230a0a0f' font-family='serif'>4</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { gold: { DEFAULT: '#c9a227', light: '#f0dfa0', dark: '#a17e1a' }, dark: { DEFAULT: '#0a0a0f', 2: '#111118', 3: '#18181f' } },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Playfair Display', 'serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #fafafa; }
+    #preloader { position: fixed; inset: 0; z-index: 99999; background: #0a0a0f; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .6s, visibility .6s; }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    #preloader .logo { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 800; color: #c9a227; }
+    #preloader .bar { width: 200px; height: 2px; background: #1f1f2a; border-radius: 2px; overflow: hidden; }
+    #preloader .bar span { display: block; width: 0; height: 100%; background: #c9a227; animation: load 1.5s ease forwards; }
+    @keyframes load { to { width: 100%; } }
+    .nav-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: all .4s; }
+    .nav-fixed.scrolled { background: rgba(10,10,15,.92); backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,.2); }
+    .gold-text { background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .btn-gold { background: #c9a227; color: #0a0a0f; padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; border: none; cursor: pointer; }
+    .btn-gold:hover { background: #f0dfa0; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,162,39,.3); }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.25); padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; cursor: pointer; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 62px; height: 62px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 999; box-shadow: 0 6px 30px rgba(37,211,102,.35); transition: all .3s; text-decoration: none; }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: #25D366; opacity: .3; animation: ring 2s infinite; }
+    @keyframes ring { 0% { transform: scale(1); opacity: .3; } 100% { transform: scale(1.4); opacity: 0; } }
+    .top-btn { position: fixed; bottom: 102px; right: 28px; width: 46px; height: 46px; background: #c9a227; color: #0a0a0f; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; opacity: 0; transform: translateY(10px); transition: all .3s; border: none; cursor: pointer; }
+    .top-btn.show { opacity: 1; transform: none; }
+    .footer-link { color: rgba(255,255,255,.55); transition: all .3s; }
+    .footer-link:hover { color: #c9a227; }
+    .page-hero { position: relative; padding: 180px 0 100px; background: #0a0a0f; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,162,39,.08), transparent 70%); }
+    .form-input { width: 100%; padding: 16px 20px; background: #f5f5f5; border: 2px solid transparent; border-radius: 14px; font-size: 15px; font-family: 'DM Sans', sans-serif; transition: all .3s; }
+    .form-input:focus { outline: none; border-color: #c9a227; background: #fff; box-shadow: 0 0 0 4px rgba(201,162,39,.08); }
+    .toast { position: fixed; top: 100px; right: 28px; background: #c9a227; color: #0a0a0f; padding: 18px 28px; border-radius: 14px; font-weight: 600; display: flex; align-items: center; gap: 10px; z-index: 10000; box-shadow: 0 10px 40px rgba(0,0,0,.15); transform: translateX(120%); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+    .toast.show { transform: none; }
+    .mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 380px; height: 100vh; background: #111118; z-index: 9999; transition: right .4s cubic-bezier(.16,1,.3,1); padding: 100px 40px 40px; }
+    .mobile-menu.open { right: 0; }
+    .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; visibility: hidden; transition: all .3s; }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+  </style>
+</head>
+<body>
+<div id="preloader"><div class="logo">4</div><div class="bar"><span></span></div></div>
+
+<nav class="nav-fixed" id="nav">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-3"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a>
+    <ul class="hidden lg:flex items-center gap-10">
+      <li><a href="index.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">About</a></li>
+      <li><a href="services.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Services</a></li>
+      <li><a href="properties.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Properties</a></li>
+      <li><a href="agents.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Agents</a></li>
+      <li><a href="contact.html" class="text-white text-[15px] font-medium">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="tel:+923441334472" class="hidden sm:flex items-center gap-2 bg-gold text-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gold-light transition"><i class="fas fa-phone text-xs"></i> Call Now</a>
+      <a href="https://wa.me/923441334472" target="_blank" class="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center text-lg hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+      <button class="lg:hidden flex flex-col gap-[5px] p-2" onclick="toggleMenu()"><span class="w-6 h-[2px] bg-white rounded"></span><span class="w-6 h-[2px] bg-white rounded"></span><span class="w-6 h-[2px] bg-white rounded"></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Home</a>
+  <a href="about.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">About</a>
+  <a href="services.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Services</a>
+  <a href="properties.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Properties</a>
+  <a href="agents.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Agents</a>
+  <a href="contact.html" class="block text-white text-2xl font-display font-bold mb-6">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+    <span class="inline-flex items-center gap-2 bg-gold/10 border border-gold/25 px-5 py-2 rounded-full text-gold text-sm font-medium mb-6 reveal"><i class="fas fa-envelope"></i> Contact Us</span>
+    <h1 class="font-display text-[clamp(36px,5vw,60px)] font-bold text-white leading-tight mb-4 reveal">Get In <span class="gold-text">Touch</span></h1>
+    <p class="text-white/50 text-lg max-w-xl mx-auto reveal">Our expert team is ready to help you with all your real estate needs across Pakistan.</p>
+  </div>
+</section>
+
+<section class="py-28 lg:py-36">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-5 gap-12">
+      <!-- Info -->
+      <div class="lg:col-span-2 space-y-5 reveal">
+        <div class="flex gap-4 p-6 bg-white rounded-2xl hover:shadow-lg transition-all duration-300 hover:translate-x-1">
+          <div class="w-[52px] h-[52px] bg-gold/10 rounded-[14px] flex items-center justify-center text-gold text-xl shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4 class="text-sm font-bold text-dark mb-1">Our Office</h4><p class="text-sm text-gray-500 leading-relaxed">Bhayani Shopping Center, Block M, North Nazimabad, 2nd Floor, Suite No# 247, Karachi, Pakistan</p></div>
+        </div>
+        <div class="flex gap-4 p-6 bg-white rounded-2xl hover:shadow-lg transition-all duration-300 hover:translate-x-1">
+          <div class="w-[52px] h-[52px] bg-gold/10 rounded-[14px] flex items-center justify-center text-gold text-xl shrink-0"><i class="fas fa-phone-alt"></i></div>
+          <div><h4 class="text-sm font-bold text-dark mb-1">Phone</h4><a href="tel:+923441334472" class="text-sm text-gold font-semibold hover:underline">+92 344 133 4472</a></div>
+        </div>
+        <div class="flex gap-4 p-6 bg-white rounded-2xl hover:shadow-lg transition-all duration-300 hover:translate-x-1">
+          <div class="w-[52px] h-[52px] bg-gold/10 rounded-[14px] flex items-center justify-center text-gold text-xl shrink-0"><i class="fas fa-envelope"></i></div>
+          <div><h4 class="text-sm font-bold text-dark mb-1">Email</h4><a href="mailto:info@4bricksmarketing.com" class="text-sm text-gold font-semibold hover:underline">info@4bricksmarketing.com</a></div>
+        </div>
+        <div class="flex gap-4 p-6 bg-white rounded-2xl hover:shadow-lg transition-all duration-300 hover:translate-x-1">
+          <div class="w-[52px] h-[52px] bg-gold/10 rounded-[14px] flex items-center justify-center text-gold text-xl shrink-0"><i class="fab fa-whatsapp"></i></div>
+          <div><h4 class="text-sm font-bold text-dark mb-1">WhatsApp</h4><a href="https://wa.me/923441334472" target="_blank" class="text-sm text-gold font-semibold hover:underline">Chat with us</a></div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-sm"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0!2d67.0!3d24.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzAwLjAiTiA2N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2spk" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+      <!-- Form -->
+      <div class="lg:col-span-3 bg-white p-8 md:p-10 rounded-[28px] shadow-[0_4px_20px_rgba(0,0,0,.06)] reveal">
+        <h3 class="font-display text-[28px] font-bold text-dark mb-1">Send Us a Message</h3>
+        <p class="text-gray-400 text-sm mb-8">Fill in the form and our team will respond within 24 hours.</p>
+        <form id="contactForm" class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div><label class="text-xs font-semibold text-gray-600 mb-1.5 block">Full Name *</label><input type="text" name="name" required placeholder="Your full name" class="form-input"></div>
+            <div><label class="text-xs font-semibold text-gray-600 mb-1.5 block">Email Address *</label><input type="email" name="email" required placeholder="your@email.com" class="form-input"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div><label class="text-xs font-semibold text-gray-600 mb-1.5 block">Phone Number *</label><input type="tel" name="phone" required placeholder="+92 3XX XXX XXXX" class="form-input"></div>
+            <div><label class="text-xs font-semibold text-gray-600 mb-1.5 block">Property Type *</label>
+              <select name="type" required class="form-input appearance-none cursor-pointer" style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center;">
+                <option value="" disabled selected>Select type</option><option>Buy Property</option><option>Rent Property</option><option>Sell Property</option><option>Residential</option><option>Commercial</option><option>Plots & Land</option><option>Free Consultation</option>
+              </select>
+            </div>
+          </div>
+          <div><label class="text-xs font-semibold text-gray-600 mb-1.5 block">Your Message</label><textarea name="message" rows="4" placeholder="Tell us about your requirements..." class="form-input resize-y min-h-[100px]"></textarea></div>
+          <button type="submit" class="btn-gold w-full justify-center py-4 text-base"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark pt-20 pb-8">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div><a href="index.html" class="flex items-center gap-3 mb-6"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a><p class="text-white/50 text-sm leading-relaxed">Pakistan's trusted real estate partner.</p></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Quick Links</h4><ul class="space-y-3"><li><a href="index.html" class="footer-link text-sm">Home</a></li><li><a href="about.html" class="footer-link text-sm">About Us</a></li><li><a href="services.html" class="footer-link text-sm">Services</a></li><li><a href="properties.html" class="footer-link text-sm">Properties</a></li><li><a href="agents.html" class="footer-link text-sm">Our Team</a></li><li><a href="contact.html" class="footer-link text-sm">Contact</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Services</h4><ul class="space-y-3"><li><a href="properties.html" class="footer-link text-sm">Buy Property</a></li><li><a href="properties.html" class="footer-link text-sm">Rent Property</a></li><li><a href="properties.html" class="footer-link text-sm">Residential</a></li><li><a href="properties.html" class="footer-link text-sm">Commercial</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Contact</h4><div class="flex gap-3 mb-4"><i class="fas fa-map-marker-alt text-gold mt-1 text-sm"></i><span class="text-white/50 text-sm">Bhayani Shopping Center, North Nazimabad, Karachi</span></div><div class="flex gap-3 mb-4"><i class="fas fa-phone-alt text-gold mt-1 text-sm"></i><a href="tel:+923441334472" class="footer-link text-sm">+92 344 133 4472</a></div><div class="flex gap-3"><i class="fas fa-envelope text-gold mt-1 text-sm"></i><a href="mailto:info@4bricksmarketing.com" class="footer-link text-sm">info@4bricksmarketing.com</a></div></div>
+    </div>
+    <div class="border-t border-white/[.06] pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2024 4 Bricks Marketing. All Rights Reserved.</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923441334472" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
+
+<script>
+window.onload = () => setTimeout(() => document.getElementById('preloader').classList.add('done'), 1500);
+window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50); document.getElementById('topBtn').classList.toggle('show', window.scrollY > 500); });
+const obs = new IntersectionObserver((e) => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); }}); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); document.getElementById('overlay').classList.toggle('open'); }
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+  btn.disabled = true;
+  const fd = new FormData(this);
+  const name = fd.get('name');
+  const email = fd.get('email');
+  const phone = fd.get('phone');
+  const type = fd.get('type');
+  const msg = fd.get('message');
+  const text = `Hello 4 Bricks Marketing!%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Service:* ${type}%0A*Message:* ${msg || 'No message'}`;
+  setTimeout(() => {
+    window.open(`https://wa.me/923441334472?text=${text}`, '_blank');
+    const t = document.getElementById('toast');
+    document.getElementById('toastText').textContent = 'Opening WhatsApp to send your message!';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+    this.reset();
+    btn.innerHTML = orig;
+    btn.disabled = false;
+  }, 800);
+});
+</script>
+</body>
+</html>

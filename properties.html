@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties – 4 Bricks Marketing</title>
+  <meta name="description" content="4 Bricks Marketing – Pakistan's trusted real estate partner. Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta name="keywords" content="real estate Pakistan, property for sale, property for rent, Karachi real estate, Lahore real estate, 4 Bricks Marketing">
+  <meta name="author" content="4 Bricks Marketing">
+  <meta property="og:title" content="4 Bricks Marketing – Pakistan's Trusted Real Estate Partner">
+  <meta property="og:description" content="Buy, sell and rent verified residential, commercial and plot listings across Pakistan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4bricksmarketing.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c9a227'/><text y='.9em' x='50' font-size='70' font-weight='bold' text-anchor='middle' fill='%230a0a0f' font-family='serif'>4</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { gold: { DEFAULT: '#c9a227', light: '#f0dfa0', dark: '#a17e1a', 50: '#fdf9ed' }, dark: { DEFAULT: '#0a0a0f', 2: '#111118', 3: '#18181f', 4: '#1f1f2a' } },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Playfair Display', 'serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #fafafa; }
+    #preloader { position: fixed; inset: 0; z-index: 99999; background: #0a0a0f; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .6s, visibility .6s; }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    #preloader .logo { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 800; color: #c9a227; }
+    #preloader .bar { width: 200px; height: 2px; background: #1f1f2a; border-radius: 2px; overflow: hidden; }
+    #preloader .bar span { display: block; width: 0; height: 100%; background: #c9a227; animation: load 1.5s ease forwards; }
+    @keyframes load { to { width: 100%; } }
+    .nav-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: all .4s; }
+    .nav-fixed.scrolled { background: rgba(10,10,15,.92); backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,.2); }
+    .gold-text { background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .btn-gold { background: #c9a227; color: #0a0a0f; padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; border: none; cursor: pointer; }
+    .btn-gold:hover { background: #f0dfa0; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,162,39,.3); }
+    .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.25); padding: 16px 36px; border-radius: 60px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all .3s; cursor: pointer; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); transform: translateY(-3px); }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; width: 62px; height: 62px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 999; box-shadow: 0 6px 30px rgba(37,211,102,.35); transition: all .3s; text-decoration: none; }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: #25D366; opacity: .3; animation: ring 2s infinite; }
+    @keyframes ring { 0% { transform: scale(1); opacity: .3; } 100% { transform: scale(1.4); opacity: 0; } }
+    .top-btn { position: fixed; bottom: 102px; right: 28px; width: 46px; height: 46px; background: #c9a227; color: #0a0a0f; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; opacity: 0; transform: translateY(10px); transition: all .3s; border: none; cursor: pointer; }
+    .top-btn.show { opacity: 1; transform: none; }
+    .top-btn:hover { transform: translateY(-3px); }
+    .footer-link { color: rgba(255,255,255,.55); transition: all .3s; }
+    .footer-link:hover { color: #c9a227; }
+    .page-hero { position: relative; padding: 180px 0 100px; background: #0a0a0f; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,162,39,.08), transparent 70%); }
+    .prop-card { transition: all .5s cubic-bezier(.16,1,.3,1); }
+    .prop-card:hover { transform: translateY(-12px); }
+    .prop-card:hover .prop-img img { transform: scale(1.08); }
+    .prop-img { overflow: hidden; }
+    .prop-img img { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .filter-btn { padding: 10px 22px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .3s; border: 2px solid #e5e7eb; background: #fff; color: #6b7280; }
+    .filter-btn.active, .filter-btn:hover { border-color: #c9a227; background: #fdf9ed; color: #c9a227; }
+    .mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 380px; height: 100vh; background: #111118; z-index: 9999; transition: right .4s cubic-bezier(.16,1,.3,1); padding: 100px 40px 40px; }
+    .mobile-menu.open { right: 0; }
+    .mobile-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 9998; opacity: 0; visibility: hidden; transition: all .3s; }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+    .prop-card.hidden-card { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="preloader"><div class="logo">4</div><div class="bar"><span></span></div></div>
+
+<!-- Nav -->
+<nav class="nav-fixed" id="nav">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-3"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a>
+    <ul class="hidden lg:flex items-center gap-10">
+      <li><a href="index.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">About</a></li>
+      <li><a href="services.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Services</a></li>
+      <li><a href="properties.html" class="text-white text-[15px] font-medium">Properties</a></li>
+      <li><a href="agents.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Agents</a></li>
+      <li><a href="contact.html" class="text-white/70 text-[15px] font-medium hover:text-white transition">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="tel:+923441334472" class="hidden sm:flex items-center gap-2 bg-gold text-dark px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gold-light transition"><i class="fas fa-phone text-xs"></i> Call Now</a>
+      <a href="https://wa.me/923441334472" target="_blank" class="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center text-lg hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+      <button class="lg:hidden flex flex-col gap-[5px] p-2" onclick="toggleMenu()"><span class="w-6 h-[2px] bg-white rounded"></span><span class="w-6 h-[2px] bg-white rounded"></span><span class="w-6 h-[2px] bg-white rounded"></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Home</a>
+  <a href="about.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">About</a>
+  <a href="services.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Services</a>
+  <a href="properties.html" class="block text-white text-2xl font-display font-bold mb-6">Properties</a>
+  <a href="agents.html" class="block text-white/60 text-lg mb-5 hover:text-gold transition">Agents</a>
+  <a href="contact.html" class="block text-white/60 text-lg mb-8 hover:text-gold transition">Contact</a>
+  <a href="tel:+923441334472" class="btn-gold w-full justify-center mb-3"><i class="fas fa-phone"></i> Call +92 344 133 4472</a>
+  <a href="https://wa.me/923441334472" target="_blank" class="btn-outline w-full justify-center"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+    <span class="inline-flex items-center gap-2 bg-gold/10 border border-gold/25 px-5 py-2 rounded-full text-gold text-sm font-medium mb-6 reveal"><i class="fas fa-building"></i> Properties</span>
+    <h1 class="font-display text-[clamp(36px,5vw,60px)] font-bold text-white leading-tight mb-4 reveal">Our <span class="gold-text">Properties</span></h1>
+    <p class="text-white/50 text-lg max-w-xl mx-auto reveal">Browse verified properties across Pakistan</p>
+  </div>
+</section>
+
+<!-- ===== FILTERS ===== -->
+<section class="relative z-10 -mt-8 px-6 lg:px-10">
+  <div class="max-w-[1400px] mx-auto bg-white rounded-2xl shadow-xl p-5 reveal">
+    <div class="flex flex-wrap gap-2 mb-4">
+      <button class="filter-btn active" onclick="setFilter('purpose',this,'all')">All</button>
+      <button class="filter-btn" onclick="setFilter('purpose',this,'sale')">For Sale</button>
+      <button class="filter-btn" onclick="setFilter('purpose',this,'rent')">For Rent</button>
+    </div>
+    <div class="flex flex-wrap gap-3 items-center">
+      <select id="filterType" onchange="filterProps()" class="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-gold transition">
+        <option value="all">All Types</option><option value="residential">Residential</option><option value="commercial">Commercial</option><option value="plot">Plots</option>
+      </select>
+      <select id="filterCity" onchange="filterProps()" class="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-gold transition">
+        <option value="all">All Cities</option><option value="Karachi">Karachi</option><option value="Lahore">Lahore</option>
+      </select>
+      <select id="filterPrice" onchange="filterProps()" class="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium focus:outline-none focus:border-gold transition">
+        <option value="all">All Prices</option><option value="low">Under 50 Lac</option><option value="mid">50 Lac - 1 Cr</option><option value="high">1 - 5 Cr</option><option value="premium">Above 5 Cr</option>
+      </select>
+      <input type="text" id="filterSearch" oninput="filterProps()" placeholder="Search location or title..." class="flex-1 min-w-[180px] px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-gold transition">
+      <span id="propCount" class="text-sm text-gray-400 font-medium ml-2"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROPERTIES GRID ===== -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div id="grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    <div id="emptyState" class="hidden text-center py-20">
+      <i class="fas fa-search text-5xl text-gray-200 mb-4"></i>
+      <p class="text-gray-400 text-lg">No properties match your filters</p>
+      <button onclick="resetFilters()" class="btn-gold mt-6 !py-3">Reset Filters</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-16 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="bg-dark rounded-[32px] p-12 lg:p-16 text-center relative overflow-hidden reveal">
+      <div class="absolute -top-32 -right-32 w-[400px] h-[400px] bg-gold/[.06] rounded-full"></div>
+      <h2 class="font-display text-[clamp(28px,3.5vw,40px)] font-bold text-white leading-tight mb-4 relative z-10">Can't Find What You're <span class="gold-text">Looking For?</span></h2>
+      <p class="text-white/60 text-lg mb-8 relative z-10">Contact us and we'll help you find the perfect property.</p>
+      <div class="flex gap-4 justify-center flex-wrap relative z-10"><a href="contact.html" class="btn-gold">Contact Us <i class="fas fa-arrow-right"></i></a><a href="https://wa.me/923441334472" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-dark pt-20 pb-8">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div><a href="index.html" class="flex items-center gap-3 mb-6"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a><p class="text-white/50 text-sm leading-relaxed">Pakistan's trusted real estate partner.</p></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Quick Links</h4><ul class="space-y-3"><li><a href="index.html" class="footer-link text-sm">Home</a></li><li><a href="about.html" class="footer-link text-sm">About Us</a></li><li><a href="services.html" class="footer-link text-sm">Services</a></li><li><a href="properties.html" class="footer-link text-sm">Properties</a></li><li><a href="agents.html" class="footer-link text-sm">Our Team</a></li><li><a href="contact.html" class="footer-link text-sm">Contact</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Services</h4><ul class="space-y-3"><li><a href="properties.html" class="footer-link text-sm">Buy Property</a></li><li><a href="properties.html" class="footer-link text-sm">Rent Property</a></li><li><a href="properties.html" class="footer-link text-sm">Residential</a></li><li><a href="properties.html" class="footer-link text-sm">Commercial</a></li></ul></div>
+      <div><h4 class="text-white font-bold text-base mb-6">Contact</h4><div class="flex gap-3 mb-4"><i class="fas fa-map-marker-alt text-gold mt-1 text-sm"></i><span class="text-white/50 text-sm">Bhayani Shopping Center, North Nazimabad, Karachi</span></div><div class="flex gap-3 mb-4"><i class="fas fa-phone-alt text-gold mt-1 text-sm"></i><a href="tel:+923441334472" class="footer-link text-sm">+92 344 133 4472</a></div><div class="flex gap-3"><i class="fas fa-envelope text-gold mt-1 text-sm"></i><a href="mailto:info@4bricksmarketing.com" class="footer-link text-sm">info@4bricksmarketing.com</a></div></div>
+    </div>
+    <div class="border-t border-white/[.06] pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2024 4 Bricks Marketing. All Rights Reserved.</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923441334472" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// Real properties data
+const properties = [
+  {"id":"22d894f3","title":"3 Bed Drawing Lounge","price":12500000,"price_type":"sale","property_type":"residential","bedrooms":5,"bathrooms":3,"area":1200,"area_unit":"sqft","location":"Nazimabad No 3","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/59f5646b-cc4f-4b42-8fb6-a9d9b6e39402.jpeg"],"status":"available","featured":true},
+  {"id":"40deee2f","title":"2 Bed D-D Portion For Sale","price":7500000,"price_type":"sale","property_type":"residential","bedrooms":2,"bathrooms":null,"area":900,"area_unit":"sqft","location":"Nazimabad-3/B","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/8991d07d-2a3e-4ce7-a811-6c85ab290c30.PNG"],"status":"available","featured":false},
+  {"id":"089cae37","title":"Seven Seas Residency","price":2700000,"price_type":"sale","property_type":"residential","bedrooms":2,"bathrooms":2,"area":680,"area_unit":"sqft","location":"Sector 7C, Surjani","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/4379ab15-5ce7-4809-b7c9-5b2c6a43c5fb.jpg"],"status":"available","featured":true},
+  {"id":"e3733ea0","title":"3 Bed DD Apartment","price":8700000,"price_type":"sale","property_type":"residential","bedrooms":3,"bathrooms":null,"area":1200,"area_unit":"sqft","location":"Block 18, Gulistan-e-Johar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/6c8003b4-d193-4cb6-a360-183b98fee167.jpg"],"status":"available","featured":true},
+  {"id":"e53fe536","title":"2 Bed Lounge First Floor","price":5000000,"price_type":"sale","property_type":"residential","bedrooms":4,"bathrooms":2,"area":720,"area_unit":"sqft","location":"Block 19, Gulistan-e-Johar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/060bf0b9-18e6-4221-8e83-ec7892208134.jpg"],"status":"available","featured":true},
+  {"id":"2d5d9182","title":"Rabia Flower Apartments","price":5500000,"price_type":"sale","property_type":"residential","bedrooms":4,"bathrooms":2,"area":900,"area_unit":"sqft","location":"Block 4-A, Gulshan-e-Iqbal","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/a9d2437d-4c2d-4165-b62d-457c38f006d1.jpg"],"status":"available","featured":true},
+  {"id":"29386fb7","title":"Tahira Apartment Sector 11-H","price":24000,"price_type":"rent","property_type":"residential","bedrooms":2,"bathrooms":2,"area":null,"area_unit":"sqft","location":"Sector 11-H, North Karachi","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/b3c666d0-105b-4906-938e-aca6eac52cee.jpg"],"status":"available","featured":true},
+  {"id":"e8399c76","title":"Commercial Space For Rent","price":250000,"price_type":"rent","property_type":"commercial","bedrooms":3,"bathrooms":4,"area":4050,"area_unit":"sqft","location":"Nazimabad No. 4","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/e35895d2-63a2-4f4b-953a-ed0f6cc21ea0.jpg"],"status":"available","featured":true},
+  {"id":"69289d4b","title":"60 Gaz Pre-Cast House","price":5500000,"price_type":"sale","property_type":"residential","bedrooms":2,"bathrooms":2,"area":60,"area_unit":"sqft","location":"Orangi Town","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/f7f840e0-aee6-41b3-a66d-9ab77bc8b376.jpg"],"status":"available","featured":true},
+  {"id":"aecfb6f0","title":"MBQ Housing Phase 2","price":4000000,"price_type":"sale","property_type":"plot","bedrooms":null,"bathrooms":null,"area":120,"area_unit":"sqft","location":"MBQ Housing Society","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/01bb0df7-375e-401b-a62c-1f2c6e5723b3.png"],"status":"available","featured":true},
+  {"id":"a3084aca","title":"MBQ Phase 1 - MDA Approved","price":1000000,"price_type":"sale","property_type":"plot","bedrooms":null,"bathrooms":null,"area":80,"area_unit":"sqft","location":"Gulshan Mymar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/bedaf131-261c-4f0a-94f7-61fe9331fbf9.png"],"status":"available","featured":true},
+  {"id":"e84e0068","title":"TUK'S Arcade - Gulshan-e-Maymar","price":4500000,"price_type":"sale","property_type":"residential","bedrooms":2,"bathrooms":2,"area":13.22,"area_unit":"marla","location":"Sector Y2, Gulshan-e-Maymar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/9d28c9a0-a587-4b1d-ba3a-1a8d737e7740.png"],"status":"available","featured":true},
+  {"id":"edf190e4","title":"Queens Park View - Y4","price":10500000,"price_type":"sale","property_type":"commercial","bedrooms":3,"bathrooms":3,"area":680,"area_unit":"sqft","location":"Sector Y4, Gulshan-e-Maymar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/ecf5db30-37af-4ff1-bae7-76399cacd700.png"],"status":"available","featured":true},
+  {"id":"3a1de25c","title":"Pearl One Courtyard Tower 2","price":10000000,"price_type":"sale","property_type":"residential","bedrooms":null,"bathrooms":null,"area":200000,"area_unit":"sqft","location":"Bahria Town Lahore","city":"Lahore","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/f5707dc4-2de2-48af-991a-e11748b6a832.png"],"status":"available","featured":true},
+  {"id":"dc8efb78","title":"Pearl One Courtyard Tower 1","price":10000000,"price_type":"sale","property_type":"residential","bedrooms":null,"bathrooms":null,"area":200000,"area_unit":"sqft","location":"Bahria Town Lahore","city":"Lahore","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/2fa03301-3821-4501-b215-583bc92b2105.png"],"status":"available","featured":true},
+  {"id":"32cb7787","title":"ABS Central - Bahria Town","price":10000000,"price_type":"sale","property_type":"commercial","bedrooms":null,"bathrooms":null,"area":19999,"area_unit":"sqft","location":"Bahria Town Lahore","city":"Lahore","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/a76ca2f8-5175-4e43-a3d7-7e5c544fc71d.png"],"status":"available","featured":true},
+  {"id":"dd17c9f8","title":"Burj Quaid - DHA City","price":10000000,"price_type":"sale","property_type":"commercial","bedrooms":null,"bathrooms":null,"area":261360,"area_unit":"sqft","location":"DHA City Karachi","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/d9b63d6f-a364-4455-91e9-fe693f28b47a.jpeg"],"status":"available","featured":true},
+  {"id":"e53fe536b","title":"2 Bed Lounge First Floor","price":5000000,"price_type":"sale","property_type":"residential","bedrooms":4,"bathrooms":2,"area":720,"area_unit":"sqft","location":"Block 19, Gulistan-e-Johar","city":"Karachi","images":["https://hxnqlktsjtkrykcqvvbs.supabase.co/storage/v1/object/public/property-images/aaae7519-a011-41f9-aa51-ae84e5775d2a.jpg"],"status":"available","featured":false}
+];
+
+let currentPurpose = 'all';
+
+function formatPrice(p) {
+  if (p >= 10000000) return 'PKR ' + (p / 10000000).toFixed(p % 10000000 === 0 ? 0 : 1) + ' Cr';
+  if (p >= 100000) return 'PKR ' + (p / 100000).toFixed(p % 100000 === 0 ? 0 : 1) + ' Lac';
+  return 'PKR ' + p.toLocaleString();
+}
+
+function getTypeLabel(t) {
+  return t === 'plot' ? 'Plots' : t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function renderCard(p) {
+  const img = p.images && p.images[0] ? p.images[0] : 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800';
+  const statusColor = p.status === 'available' ? 'bg-green-500' : p.status === 'sold' ? 'bg-red-500' : 'bg-blue-500';
+  const purposeLabel = p.price_type === 'sale' ? 'For Sale' : 'For Rent';
+  const priceDisplay = p.price_type === 'rent' ? formatPrice(p.price) + '/mo' : formatPrice(p.price);
+
+  let specs = '';
+  if (p.bedrooms) specs += `<span><i class="fas fa-bed text-gold mr-1"></i> ${p.bedrooms} Beds</span>`;
+  if (p.bathrooms) specs += `<span><i class="fas fa-bath text-gold mr-1"></i> ${p.bathrooms} Baths</span>`;
+  if (p.area && p.area > 0) specs += `<span><i class="fas fa-vector-square text-gold mr-1"></i> ${p.area.toLocaleString()} ${p.area_unit}</span>`;
+
+  return `
+    <div class="prop-card bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,.06)]"
+         data-type="${p.property_type}" data-price="${p.price}" data-purpose="${p.price_type}" data-city="${p.city}"
+         data-search="${(p.title + ' ' + p.location + ' ' + p.city).toLowerCase()}">
+      <div class="prop-img relative h-72">
+        <img loading="lazy" src="${img}" alt="${p.title}" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800'">
+        <div class="absolute top-4 left-4 bg-gold text-dark px-4 py-1.5 rounded-full text-xs font-bold uppercase">${getTypeLabel(p.property_type)}</div>
+        <div class="absolute top-4 right-4 ${statusColor} text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase">${p.status}</div>
+        <div class="absolute bottom-4 left-4 bg-dark/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-bold">${purposeLabel}</div>
+      </div>
+      <div class="p-7">
+        <h3 class="font-bold text-dark text-lg mb-1 line-clamp-1">${p.title}</h3>
+        <p class="text-gray-400 text-sm mb-4"><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> ${p.location}, ${p.city}</p>
+        ${specs ? `<div class="flex gap-4 text-xs text-gray-400 border-t border-gray-100 py-4 mb-5">${specs}</div>` : '<div class="border-t border-gray-100 py-4 mb-5"></div>'}
+        <div class="flex justify-between items-center">
+          <span class="text-xl font-bold gold-text font-display">${priceDisplay}</span>
+          <a href="contact.html" class="text-sm font-semibold text-dark hover:text-gold transition">Inquire <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderGrid() {
+  document.getElementById('grid').innerHTML = properties.map(renderCard).join('');
+  filterProps();
+}
+
+function setFilter(key, btn, val) {
+  if (key === 'purpose') {
+    currentPurpose = val;
+    btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterProps();
+  }
+}
+
+function getPriceRange(price) {
+  if (price < 5000000) return 'low';
+  if (price < 10000000) return 'mid';
+  if (price < 50000000) return 'high';
+  return 'premium';
+}
+
+function filterProps() {
+  const type = document.getElementById('filterType').value;
+  const city = document.getElementById('filterCity').value;
+  const price = document.getElementById('filterPrice').value;
+  const search = document.getElementById('filterSearch').value.toLowerCase();
+  let count = 0;
+
+  document.querySelectorAll('#grid .prop-card').forEach(c => {
+    const mt = type === 'all' || c.dataset.type === type;
+    const mc = city === 'all' || c.dataset.city === city;
+    const mp = price === 'all' || getPriceRange(+c.dataset.price) === price;
+    const ms = !search || c.dataset.search.includes(search);
+    const mpr = currentPurpose === 'all' || c.dataset.purpose === currentPurpose;
+    const show = mt && mc && mp && ms && mpr;
+    c.classList.toggle('hidden-card', !show);
+    if (show) count++;
+  });
+
+  document.getElementById('propCount').textContent = count + ' properties found';
+  document.getElementById('emptyState').classList.toggle('hidden', count > 0);
+}
+
+function resetFilters() {
+  document.getElementById('filterType').value = 'all';
+  document.getElementById('filterCity').value = 'all';
+  document.getElementById('filterPrice').value = 'all';
+  document.getElementById('filterSearch').value = '';
+  currentPurpose = 'all';
+  document.querySelectorAll('.filter-btn').forEach((b, i) => { b.classList.toggle('active', i === 0); });
+  filterProps();
+}
+
+// Init
+window.onload = () => {
+  setTimeout(() => document.getElementById('preloader').classList.add('done'), 1500);
+  renderGrid();
+};
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('topBtn').classList.toggle('show', window.scrollY > 500);
+});
+const obs = new IntersectionObserver((e) => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); }}); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); document.getElementById('overlay').classList.toggle('open'); }
+</script>
+</body>
+</html>
