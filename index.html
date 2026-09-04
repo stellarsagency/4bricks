@@ -128,11 +128,12 @@
     .mobile-overlay.open { opacity: 1; visibility: visible; }
 
     @media (max-width: 768px) {
-      .hero { min-height: 680px; }
+      .hero { min-height: auto; height: auto; padding: 100px 0 60px; }
       .hero .hero-search > .flex { flex-direction: column; gap: 8px; }
       .hero .hero-search input { text-align: center; padding: 14px 16px; }
       .hero .hero-search a { width: 100%; display: flex; justify-content: center; padding: 14px 20px; }
       .hero .btn-gold, .hero .btn-outline { width: 100%; justify-content: center; }
+      .hero-scroll { display: none; }
       .page-hero { padding: 120px 0 60px; }
       .btn-gold, .btn-outline { padding: 14px 24px; font-size: 14px; }
       .stat-num { font-size: 32px !important; }
@@ -210,20 +211,20 @@
   </div>
 
   <!-- Main content -->
-  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 pt-32">
+  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-5 lg:px-10 pt-24 md:pt-32">
     <div class="max-w-3xl">
-      <div class="hero-badge mb-8 reveal">
+      <div class="hero-badge mb-5 md:mb-8 reveal">
         <span class="hero-badge-dot"></span>
-        <span class="text-gold text-sm font-medium">#1 Real Estate Platform in Pakistan</span>
+        <span class="text-gold text-xs md:text-sm font-medium">#1 Real Estate Platform in Pakistan</span>
       </div>
 
-      <h1 class="font-display font-extrabold leading-[1.02] mb-8 reveal">
-        <span class="block text-white text-[clamp(48px,8vw,92px)] tracking-tight">Find Your</span>
-        <span class="block text-[clamp(48px,8vw,92px)] tracking-tight"><span class="gold-text">Dream</span> <span class="gold-text">Property</span></span>
-        <span class="block text-white/60 text-[clamp(20px,3vw,32px)] font-sans font-medium tracking-normal mt-4">in Pakistan's Most Trusted Real Estate Market</span>
+      <h1 class="font-display font-extrabold leading-[1.05] mb-5 md:mb-8 reveal">
+        <span class="block text-white text-[40px] sm:text-[clamp(48px,8vw,92px)] tracking-tight">Find Your</span>
+        <span class="block text-[40px] sm:text-[clamp(48px,8vw,92px)] tracking-tight"><span class="gold-text">Dream</span> <span class="gold-text">Property</span></span>
+        <span class="block text-white/60 text-[16px] sm:text-[clamp(20px,3vw,32px)] font-sans font-medium tracking-normal mt-2 md:mt-4">in Pakistan's Most Trusted Real Estate Market</span>
       </h1>
 
-      <p class="text-white/45 text-[clamp(15px,1.8vw,18px)] max-w-xl leading-relaxed mb-10 reveal">
+      <p class="text-white/45 text-sm md:text-[clamp(15px,1.8vw,18px)] max-w-xl leading-relaxed mb-6 md:mb-10 reveal">
         Discover verified residential, commercial and plot listings across Pakistan. Buy, sell or rent with confidence.
       </p>
 
