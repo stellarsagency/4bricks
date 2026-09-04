@@ -29,12 +29,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; }
-    #preloader { position: fixed; inset: 0; z-index: 99999; background: #0a0a0f; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .6s, visibility .6s; }
-    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    #preloader .logo { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 800; color: #c9a227; }
-    #preloader .bar { width: 200px; height: 2px; background: #1f1f2a; border-radius: 2px; overflow: hidden; }
-    #preloader .bar span { display: block; width: 0; height: 100%; background: #c9a227; animation: load 1.5s ease forwards; }
-    @keyframes load { to { width: 100%; } }
     .nav-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: all .4s; }
     .nav-fixed.scrolled { background: rgba(10,10,15,.92); backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,.2); }
     .gold-text { background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -65,8 +59,6 @@
   </style>
 </head>
 <body>
-<div id="preloader"><div class="logo">4</div><div class="bar"><span></span></div></div>
-
 <nav class="nav-fixed" id="nav">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
     <a href="index.html" class="flex items-center gap-3"><div class="w-11 h-11 bg-gold rounded-xl flex items-center justify-center text-dark font-display text-2xl font-bold">4</div><div class="leading-none"><div class="font-display text-lg font-bold text-white">Bricks</div><div class="text-[10px] uppercase tracking-[3px] text-gold font-medium">Marketing</div></div></a>
@@ -168,7 +160,6 @@
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
 
 <script>
-window.onload = () => setTimeout(() => document.getElementById('preloader').classList.add('done'), 1500);
 window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50); document.getElementById('topBtn').classList.toggle('show', window.scrollY > 500); });
 const obs = new IntersectionObserver((e) => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); obs.unobserve(x.target); }}); }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));

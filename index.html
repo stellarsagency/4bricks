@@ -37,14 +37,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; }
 
-    /* Preloader */
-    #preloader { position: fixed; inset: 0; z-index: 99999; background: #0a0a0f; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity .6s, visibility .6s; }
-    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    #preloader .logo { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 800; color: #c9a227; }
-    #preloader .bar { width: 200px; height: 2px; background: #1f1f2a; border-radius: 2px; overflow: hidden; }
-    #preloader .bar span { display: block; width: 0; height: 100%; background: #c9a227; animation: load 1.5s ease forwards; }
-    @keyframes load { to { width: 100%; } }
-
     /* Nav */
     .nav-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: all .4s; }
     .nav-fixed.scrolled { background: rgba(10,10,15,.92); backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,.2); }
@@ -52,32 +44,24 @@
     /* Hero */
     .hero { position: relative; height: 100vh; min-height: 800px; display: flex; align-items: center; overflow: hidden; background: #0a0a0f; }
     .hero-bg { position: absolute; inset: 0; }
-    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45; transform: scale(1.05); animation: heroZoom 20s ease-in-out infinite alternate; }
-    @keyframes heroZoom { 0% { transform: scale(1.05); } 100% { transform: scale(1.15); } }
-    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,15,.92) 0%, rgba(10,10,15,.7) 50%, rgba(10,10,15,.5) 100%); }
-    .hero-gradient::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, #0a0a0f, transparent); }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,162,39,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,39,.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); }
-    .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: orbFloat 8s ease-in-out infinite; }
-    .hero-orb-1 { width: 500px; height: 500px; background: rgba(201,162,39,.12); top: -10%; right: -5%; animation-delay: 0s; }
-    .hero-orb-2 { width: 350px; height: 350px; background: rgba(201,162,39,.08); bottom: 10%; left: -5%; animation-delay: -4s; }
-    .hero-orb-3 { width: 200px; height: 200px; background: rgba(201,162,39,.06); top: 30%; right: 30%; animation-delay: -2s; }
-    @keyframes orbFloat { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.1); } }
-    .hero-line { position: absolute; width: 1px; background: linear-gradient(to bottom, transparent, rgba(201,162,39,.2), transparent); height: 120px; animation: lineMove 4s ease-in-out infinite; }
-    @keyframes lineMove { 0%,100% { opacity: .3; } 50% { opacity: .8; } }
-    .hero-float { position: absolute; background: rgba(255,255,255,.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 16px 20px; animation: floatCard 6s ease-in-out infinite; }
-    @keyframes floatCard { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-    .hero-float-1 { bottom: 18%; right: 8%; animation-delay: 0s; }
-    .hero-float-2 { top: 25%; right: 15%; animation-delay: -2s; }
-    .hero-float-3 { bottom: 30%; right: 25%; animation-delay: -4s; }
-    .hero-search { background: rgba(255,255,255,.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 8px; }
-    .hero-search input { background: transparent; border: none; outline: none; color: #fff; font-size: 15px; padding: 14px 20px; width: 100%; }
-    .hero-search input::placeholder { color: rgba(255,255,255,.35); }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,162,39,.08); border: 1px solid rgba(201,162,39,.2); padding: 8px 18px; border-radius: 60px; }
+    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .5; will-change: transform; }
+    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,15,.93) 0%, rgba(10,10,15,.7) 40%, rgba(10,10,15,.45) 100%); }
+    .hero-gradient::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 180px; background: linear-gradient(to top, #0a0a0f, transparent); }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); will-change: transform; }
+    .hero-orb-1 { width: 500px; height: 500px; background: rgba(201,162,39,.15); top: -10%; right: -5%; animation: orbFloat 12s ease-in-out infinite; }
+    .hero-orb-2 { width: 350px; height: 350px; background: rgba(201,162,39,.08); bottom: 10%; left: -5%; animation: orbFloat 12s ease-in-out infinite -4s; }
+    @keyframes orbFloat { 0%,100% { transform: translate(0,0); } 50% { transform: translate(20px,-15px); } }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,162,39,.1); border: 1px solid rgba(201,162,39,.25); padding: 8px 20px; border-radius: 60px; }
     .hero-badge-dot { width: 6px; height: 6px; background: #c9a227; border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
-    .hero-stat { text-align: center; padding: 20px 24px; background: rgba(255,255,255,.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.05); border-radius: 16px; min-width: 130px; }
-    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; background: linear-gradient(135deg, #c9a227, #f0dfa0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+    .hero-float { position: absolute; background: rgba(255,255,255,.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 16px 22px; animation: floatCard 8s ease-in-out infinite; }
+    @keyframes floatCard { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .hero-float-1 { bottom: 20%; right: 8%; animation-delay: 0s; }
+    .hero-float-2 { top: 28%; right: 18%; animation-delay: -3s; }
+    .hero-float-3 { bottom: 35%; right: 28%; animation-delay: -5s; }
+    .hero-search { background: rgba(255,255,255,.07); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 6px; }
+    .hero-search input { background: transparent; border: none; outline: none; color: #fff; font-size: 15px; padding: 14px 20px; width: 100%; font-family: 'DM Sans', sans-serif; }
+    .hero-search input::placeholder { color: rgba(255,255,255,.35); }
     .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10; }
     .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(201,162,39,.5), transparent); animation: scrollLine 2s ease-in-out infinite; }
     @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
@@ -146,12 +130,6 @@
 </head>
 <body>
 
-<!-- Preloader -->
-<div id="preloader">
-  <div class="logo">4</div>
-  <div class="bar"><span></span></div>
-</div>
-
 <!-- Nav -->
 <nav class="nav-fixed" id="nav">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
@@ -201,23 +179,12 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <!-- Background -->
   <div class="hero-bg">
-    <img loading="lazy" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Luxury real estate">
+    <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Luxury real estate">
   </div>
   <div class="hero-gradient"></div>
-  <div class="hero-grid"></div>
-
-  <!-- Floating orbs -->
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-
-  <!-- Decorative lines -->
-  <div class="hero-line" style="left:10%; top:20%;"></div>
-  <div class="hero-line" style="left:25%; top:40%; animation-delay:-1s;"></div>
-  <div class="hero-line" style="right:20%; top:15%; animation-delay:-2s;"></div>
-  <div class="hero-line" style="right:35%; bottom:25%; animation-delay:-3s;"></div>
 
   <!-- Floating cards -->
   <div class="hero-float hero-float-1 hidden lg:flex items-center gap-3">
@@ -228,34 +195,26 @@
     <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center"><i class="fas fa-star text-gold text-sm"></i></div>
     <div><div class="text-white text-sm font-semibold">4.9 Rating</div><div class="text-white/40 text-xs">Client Reviews</div></div>
   </div>
-  <div class="hero-float hero-float-3 hidden lg:flex items-center gap-3">
-    <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center"><i class="fas fa-map-marker-alt text-gold text-sm"></i></div>
-    <div><div class="text-white text-sm font-semibold">8+ Cities</div><div class="text-white/40 text-xs">Across Pakistan</div></div>
-  </div>
 
   <!-- Main content -->
   <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 pt-32">
     <div class="max-w-3xl">
-      <!-- Badge -->
       <div class="hero-badge mb-8 reveal">
         <span class="hero-badge-dot"></span>
         <span class="text-gold text-sm font-medium">#1 Real Estate Platform in Pakistan</span>
       </div>
 
-      <!-- Heading -->
       <h1 class="font-display font-extrabold leading-[1.02] mb-8 reveal">
         <span class="block text-white text-[clamp(48px,8vw,92px)] tracking-tight">Find Your</span>
         <span class="block text-[clamp(48px,8vw,92px)] tracking-tight"><span class="gold-text">Dream</span> Property</span>
         <span class="block text-white/60 text-[clamp(20px,3vw,32px)] font-sans font-medium tracking-normal mt-4">in Pakistan's Most Trusted Real Estate Market</span>
       </h1>
 
-      <!-- Subtitle -->
       <p class="text-white/45 text-[clamp(15px,1.8vw,18px)] max-w-xl leading-relaxed mb-10 reveal">
         Discover verified residential, commercial and plot listings across Pakistan. Buy, sell or rent with confidence.
       </p>
 
-      <!-- Search bar -->
-      <div class="hero-search max-w-2xl mb-12 reveal">
+      <div class="hero-search max-w-2xl mb-10 reveal">
         <div class="flex items-center">
           <i class="fas fa-search text-white/30 ml-5 text-lg"></i>
           <input type="text" placeholder="Search by city, area, or property name..." class="flex-1">
@@ -263,16 +222,13 @@
         </div>
       </div>
 
-      <!-- CTAs -->
-      <div class="flex flex-wrap gap-4 mb-14 reveal">
+      <div class="flex flex-wrap gap-4 reveal">
         <a href="properties.html" class="btn-gold"><i class="fas fa-compass"></i><span>Explore Properties</span></a>
         <a href="https://wa.me/923441334472" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span></a>
       </div>
-
     </div>
   </div>
 
-  <!-- Scroll indicator -->
   <div class="hero-scroll">
     <div class="text-white/30 text-[10px] uppercase tracking-[3px] mb-2">Scroll</div>
     <div class="hero-scroll-line"></div>
@@ -668,9 +624,6 @@
 <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastText"></span></div>
 
 <script>
-// Preloader
-window.onload = () => setTimeout(() => document.getElementById('preloader').classList.add('done'), 1500);
-
 // Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
